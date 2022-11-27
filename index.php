@@ -19,7 +19,7 @@
           <label for='type'>Id: " . $row["id"]. "</label>
           <input type='hidden' name='id' value=" . $row["id"]. ">
           <label for='type'>Tier:</label>
-          <input type='text' style='width: 10px' value='" . $row["weaponTier"] . "'>
+          <input type='text' name='weaponTier' style='width: 10px' value='" . $row["weaponTier"] . "'>
           <label for='type'>Type:</label>
           <input type='text' name='weaponType' style='width: 95px' value='" . $row["weaponType"] . "'>
           <label>Damage:</label>
@@ -63,7 +63,7 @@
           <label for='type'>Id: " . $row["id"]. "</label>
           <input type='hidden' name='id' value=" . $row["id"]. ">
           <label for='type'>Tier:</label>
-          <input type='text' style='width: 10px' value='" . $row["armorTier"] . "'>
+          <input type='text' name='armorTier' style='width: 10px' value='" . $row["armorTier"] . "'>
           <label for='type'>Type:</label>
           <input type='text' name='armorType' style='width: 95px' value='" . $row["armorType"] . "'>
           <label>Defence:</label>
@@ -147,7 +147,7 @@
           <label for='type'>Id: " . $row["id"]. "</label>
           <input type='hidden' name='id' value=" . $row["id"]. ">
           <label for='type'>Tier:</label>
-          <input type='text' style='width: 10px' value='" . $row["enemyTier"] . "'>
+          <input type='text' name='enemyTier' style='width: 10px' value='" . $row["enemyTier"] . "'>
           <label for='type'>Type:</label>
           <input type='text' name='enemyType' style='width: 95px' value='" . $row["enemyType"] . "'>
           <label>Health:</label>

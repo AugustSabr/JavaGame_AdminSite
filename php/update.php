@@ -9,9 +9,9 @@
       $effectExists = mysqli_num_rows(mysqli_query($conn, "SHOW COLUMNS FROM ".$dbtable."s LIKE '".$dbtable."Effect'"));
       $damageExists = mysqli_num_rows(mysqli_query($conn, "SHOW COLUMNS FROM ".$dbtable."s LIKE '".$dbtable."Damage'"));
       $healthExists = mysqli_num_rows(mysqli_query($conn, "SHOW COLUMNS FROM ".$dbtable."s LIKE '".$dbtable."Health'"));
-  
+        
       $type = mysqli_real_escape_string($conn, $_POST[$dbtable.'Type']);
-      $sql = "UPDATE ".$dbtable."s SET ".$dbtable."Type = $type WHERE id=$id;";
+      $sql = "UPDATE ".$dbtable."s SET ".$dbtable."Type = '$type' WHERE id=$id;";
   
       if($tierExists != 0){
         $tier =  mysqli_real_escape_string($conn, $_POST[$dbtable.'Tier']);
