@@ -1,5 +1,5 @@
 
- $sql = "INSERT INTO Weapons (weaponTier, weaponType, weaponEffect) VALUES (1, 'stick', 10);";
+$sql = "INSERT INTO Weapons (weaponTier, weaponType, weaponEffect) VALUES (1, 'stick', 10);";
 $sql .= "INSERT INTO Weapons (weaponTier, weaponType, weaponEffect) VALUES (1, 'boxing gloves', 15);";
 $sql .= "INSERT INTO Weapons (weaponTier, weaponType, weaponEffect) VALUES (1, 'torch', 15);";
 $sql .= "INSERT INTO Weapons (weaponTier, weaponType, weaponEffect) VALUES (1, 'whip', 15);";
@@ -57,8 +57,6 @@ $sql .= "INSERT INTO enemys (enemyTier, enemyType, enemyHealth, enemyDamage) VAL
 $sql .= "INSERT INTO enemys (enemyTier, enemyType, enemyHealth, enemyDamage) VALUES (3, 'golem', 300, 100);";
 $sql .= "INSERT INTO enemys (enemyTier, enemyType, enemyHealth, enemyDamage) VALUES (3, 'cyclops', 315, 100);";
 $sql .= "INSERT INTO enemys (enemyTier, enemyType, enemyHealth, enemyDamage) VALUES (3, 'frost giant', 330, 100);";
-
-
 
 if (mysqli_multi_query($conn, $sql)) {
   echo "<p>less go</p>";
