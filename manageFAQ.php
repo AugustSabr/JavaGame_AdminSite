@@ -30,7 +30,7 @@
       $sql = "SELECT * FROM `faqs`";
       $result = mysqli_query($conn, $sql);
 
-      if (mysqli_num_rows($result) > 0) {
+      if (0 < mysqli_num_rows($result)) {
         while($row = mysqli_fetch_assoc($result)) {
           if($row["seen"] == "y"){
             echo "
@@ -63,7 +63,7 @@
     <h3>usvarte spørsmål</h3>
     <?php
       $result = mysqli_query($conn, $sql);
-      if (mysqli_num_rows($result) > 0) {
+      if (0 < mysqli_num_rows($result)) {
         while($row = mysqli_fetch_assoc($result)) {
           if($row["seen"] != "y"){
             echo "

@@ -27,7 +27,7 @@
     $sql = "SELECT * FROM `users`";
     $result = mysqli_query($conn, $sql);
 
-    if (mysqli_num_rows($result) > 0) {
+    if (0 < mysqli_num_rows($result)) {
       echo "<h2>Admin brukere</h2>";
       while($row = mysqli_fetch_assoc($result)) {
         echo "

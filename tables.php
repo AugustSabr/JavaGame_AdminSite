@@ -30,7 +30,7 @@
       $sql = "SELECT * FROM `Weapons` ORDER BY weaponTier ASC, weaponEffect ASC";
       $result = mysqli_query($conn, $sql);
 
-      if (mysqli_num_rows($result) > 0) {
+      if (0 < mysqli_num_rows($result)) {
         echo "<h2>Weapons</h2>";
         while($row = mysqli_fetch_assoc($result)) {
           echo "
@@ -74,7 +74,7 @@
       $sql = "SELECT * FROM `Armors` ORDER BY armorTier ASC, armorEffect ASC";
       $result = mysqli_query($conn, $sql);
 
-      if (mysqli_num_rows($result) > 0) {
+      if (0 < mysqli_num_rows($result)) {
         echo "<h2>Armors</h2>";
         while($row = mysqli_fetch_assoc($result)) {
           echo "
@@ -117,7 +117,7 @@
       $sql = "SELECT * FROM `Blessings`";
       $result = mysqli_query($conn, $sql);
 
-      if (mysqli_num_rows($result) > 0) {
+      if (0 < mysqli_num_rows($result)) {
         echo "<h2>Blessings</h2>";
         while($row = mysqli_fetch_assoc($result)) {
           echo "
@@ -158,7 +158,7 @@
       $sql = "SELECT * FROM `enemys` ORDER BY enemyTier ASC, enemyHealth ASC, enemyDamage ASC";
       $result = mysqli_query($conn, $sql);
 
-      if (mysqli_num_rows($result) > 0) {
+      if (0 < mysqli_num_rows($result)) {
         echo "<h2>Enemies</h2>";
         while($row = mysqli_fetch_assoc($result)) {
           echo "

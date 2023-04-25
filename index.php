@@ -44,7 +44,7 @@
           $result = mysqli_query($conn, $sql)
             or die('Error connecting to database.');
         
-          if (mysqli_num_rows($result) > 0) {
+          if (0 < mysqli_num_rows($result)) {
             while($row = mysqli_fetch_assoc($result)) {
               if (password_verify($pwd, $row["password"])) {
                 mysqli_query($conn, "UPDATE users SET usrLoginTime = CURRENT_TIMESTAMP() WHERE username='$usrn'");
@@ -92,7 +92,7 @@ window.onclick = function(event) {
       $sql = "SELECT * FROM `faqs`";
       $result = mysqli_query($conn, $sql);
 
-      if (mysqli_num_rows($result) > 0) {
+      if (0 < mysqli_num_rows($result)) {
         while($row = mysqli_fetch_assoc($result)) {
           if ($row["seen"] == "y"){
             echo "
