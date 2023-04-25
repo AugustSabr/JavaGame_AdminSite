@@ -27,7 +27,7 @@
     <div>
       <?php
       include 'php/connect.php';
-      $sql = "SELECT * FROM `Weapons`";
+      $sql = "SELECT * FROM `Weapons` ORDER BY weaponTier ASC, weaponEffect ASC";
       $result = mysqli_query($conn, $sql);
 
       if (mysqli_num_rows($result) > 0) {
@@ -71,7 +71,7 @@
     <div>
       <?php
       include 'php/connect.php';
-      $sql = "SELECT * FROM `Armors`";
+      $sql = "SELECT * FROM `Armors` ORDER BY armorTier ASC, armorEffect ASC";
       $result = mysqli_query($conn, $sql);
 
       if (mysqli_num_rows($result) > 0) {
@@ -155,7 +155,7 @@
     <div>
       <?php
       include 'php/connect.php';
-      $sql = "SELECT * FROM `enemys`";
+      $sql = "SELECT * FROM `enemys` ORDER BY enemyTier ASC, enemyHealth ASC, enemyDamage ASC";
       $result = mysqli_query($conn, $sql);
 
       if (mysqli_num_rows($result) > 0) {

@@ -16,7 +16,7 @@
 </head>
 <body id="ibody">
 
-<span id="modalButton" class="loginORout">Login as admin</span>
+<span id="modalButton" class="loginORout">Logg inn</span>
 
 <!-- The Modal -->
 <div id="myModal" class="modal" style="margin: 0px;">
@@ -113,19 +113,19 @@ window.onclick = function(event) {
 
       mysqli_close($conn);
     ?>
-  </div>
-  <div>
-    <h3 id="h1">Still ditt eget spørsmål:</h3>
-    <form id="faqAsk" method="POST" name="" action="php/insert.php">
-      <input type="hidden" name="dbtable" value="faq">
-      <label>Name:</label>
-      <input type='text' name='qName' style='width: 50%' placeholder="this wil be public information do not share sensetive information">
-      <label>Question title:</label>
-      <input type='text' name='qTitle' style='width: 50%' placeholder="a tilte to youre question">
-      <label for='type'>Question:</label>
-      <textarea name='question' cols='10' rows='5' style='width: 50%'></textarea>
-      <button type="submit" name="insert" style='width: 100px'>Submit</button>
-    </form>
+    <div>
+      <h3 id="h1">Still ditt eget spørsmål:</h3>
+      <form id="faqAsk" method="POST" name="" action="php/insert.php">
+        <input type="hidden" name="dbtable" value="faq">
+        <label>Navn:</label>
+        <input type='text' name='qName' style='width: 50%' placeholder="denne informasjonen vil bli publisert så ikke del sensetiv informasjon">
+        <label>Spørsmål overskrift:</label>
+        <input type='text' name='qTitle' style='width: 50%' placeholder="en overskrift til spørsmålet">
+        <label for='type'>Spørsmål:</label>
+        <textarea name='question' cols='10' rows='5' style='width: 50%'></textarea>
+        <button type="submit" name="insert" style='width: 100px' onclick="submitAlert()">Submit</button>
+      </form>
+    </div>
   </div>
 </div>
 
@@ -145,7 +145,10 @@ window.onclick = function(event) {
     });
   }
 
-  var insert = document.getElementsByName()
+  function submitAlert(){
+    alert("Takk for spørsmål, etter noen har sett på det og svart vil det komme på nettsiden");
+  }
+  //response to form
 </script>
 
 

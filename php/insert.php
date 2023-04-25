@@ -5,7 +5,7 @@
   if (isset($_POST["insert"])){
     $dbtable = mysqli_real_escape_string($conn, $_POST['dbtable']);
 
-    if($dbtable == 'weapon' || $dbtable == 'armor' || $dbtable == 'blessing'){
+    if($dbtable == 'weapon' || $dbtable == 'armor' || $dbtable == 'blessing'|| $dbtable == 'enemy'){
       $location = "Location: ../tables.php";
       $type = mysqli_real_escape_string($conn, $_POST[$dbtable.'Type']);
 

@@ -8,7 +8,7 @@
     $dbtable = $_POST['dbtable'];
     $id = $_POST['id'];
 
-    if($dbtable == 'weapon' || $dbtable == 'armor' || $dbtable == 'blessing'){
+    if($dbtable == 'weapon' || $dbtable == 'armor' || $dbtable == 'blessing'|| $dbtable == 'enemy'){
       $location = "Location: ../tables.php";
       if ($_POST["action"] == 'update'){
         $tierExists = mysqli_num_rows(mysqli_query($conn, "SHOW COLUMNS FROM ".$dbtable."s LIKE '".$dbtable."Tier'"));
