@@ -1,4 +1,10 @@
-
+<?php
+    session_start();
+    if (isset($_SESSION['privileges'])) {
+      unset($_SESSION['privileges']);
+    }
+    include './php/connect.php';
+  ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +16,7 @@
   <title>Homepage</title>
 </head>
 <body id="ibody">
+
 <span id="modalButton" class="loginORout">Logg inn</span>
 
 <!-- The Modal -->
@@ -53,6 +60,7 @@
           }
         }
       ?>
+      
   </div>
 </div>
 <script>
