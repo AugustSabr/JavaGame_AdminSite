@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if (isset($_SESSION['privileges'])) {
+      unset($_SESSION['privileges']);
+    }
+    include 'php/connect.php';
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +13,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/style.css" rel="stylesheet" type="text/css" />
   <title>Homepage</title>
-  <?php
-    session_start();
-    if (isset($_SESSION['privileges'])) {
-      unset($_SESSION['privileges']);
-    }
-    include 'php/connect.php';
-  ?>
 </head>
 <body id="ibody">
 
