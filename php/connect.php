@@ -1,5 +1,5 @@
 <?php
-$IP = "localhost";
+$IP = "127.0.0.1";
 $username = "Admin";
 $password = "HmBw1yvcYpkawfFu";
 $database = "game4";
