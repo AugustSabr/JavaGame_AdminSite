@@ -3,7 +3,6 @@
     if (isset($_SESSION['privileges'])) {
       unset($_SESSION['privileges']);
     }
-    include './php/connect.php';
     include './error_log_start.php';
   ?>
 
