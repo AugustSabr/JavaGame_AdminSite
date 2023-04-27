@@ -1,5 +1,5 @@
 <?php
-$IP = "10.0.0.71";
+$IP = "10.0.0.70";
 $username = "Admin";
 $password = "HmBw1yvcYpkawfFu";
 $database = "game4";
