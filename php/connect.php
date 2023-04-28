@@ -8,6 +8,6 @@ $password = "123";
 $conn = pg_connect("host=$IP port=$Port dbname=$database user=$username password=$password");
 
 if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
+  die("Connection failed: " .  pg_last_error($conn));
 }
 ?>
