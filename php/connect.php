@@ -1,5 +1,5 @@
 <?php
-$IP = "host=10.0.0.70";
+$IP = "host=localhost";
 $Port = "port=5432";
 $database = "dbname=game4";
 $username = "user=postgres";
@@ -12,3 +12,4 @@ if (!$conn) {
   die("Connection failed: ");
 }
 ?>
+<!-- host=10.0.0.70 port=5432 dbname=game4 user=postgres password=123 -->
