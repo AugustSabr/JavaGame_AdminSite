@@ -48,16 +48,16 @@
         
           if (0 < pg_num_rows($result)) {
             while($row = pg_fetch_row($result)) {
-              if (password_verify($pwd, $row[3])) {
+              if (password_verify($pwd, $row[2])) {
                 pg_query($conn, "UPDATE users SET usrLoginTime = CURRENT_TIMESTAMP() WHERE username='$usrn'");
                 $_SESSION["privileges"] = $row["privileges"];
                 header("Location: admin.php");
               } else {
-                echo '<p>feil brukernavn eller passord2</p>';
+                echo '<p>feil brukernavn eller passord</p>';
               }
             }
           } else {
-            echo '<p>feil brukernavn eller passord1</p>';
+            echo '<p>feil brukernavn eller passord</p>';
           }
         }
       ?>
