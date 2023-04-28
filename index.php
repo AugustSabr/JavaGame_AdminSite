@@ -48,7 +48,7 @@
         
           if (0 < pg_num_rows($result)) {
             while($row = pg_fetch_row($result)) {
-              if (password_verify($pwd, $row["password"])) {
+              if (password_verify($pwd, $row[3])) {
                 pg_query($conn, "UPDATE users SET usrLoginTime = CURRENT_TIMESTAMP() WHERE username='$usrn'");
                 $_SESSION["privileges"] = $row["privileges"];
                 header("Location: admin.php");
