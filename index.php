@@ -97,15 +97,15 @@ window.onclick = function(event) {
 
       if (0 < pg_num_rows($result)) {
         while($row = pg_fetch_row($result)) {
-          if ($row["seen"] == "y"){
+          if ($row[6] == "y"){
             echo "
-            <button type='button' class='faqCollapsible'>" . $row["qTitle"]. "</button>
+            <button type='button' class='faqCollapsible'>" . $row[2]. "</button>
             <div class='faqContent'>
-              <h3>" . $row["qName"]. "</h3>
-              <p>" . $row["question"]. "</p>
+              <h3>" . $row[1]. "</h3>
+              <p>" . $row[3]. "</p>
 
-              <h4>" . $row["aName"]. "</h4>
-              <p>" . $row["answer"]. "</p>
+              <h4>" . $row[4]. "</h4>
+              <p>" . $row[6]. "</p>
             </div>
             ";
           }
