@@ -3,7 +3,7 @@
     if (isset($_SESSION['privileges'])) {
       unset($_SESSION['privileges']);
     }
-    include_once './php/connect.php';
+a    include_once './php/connect.php';
     include './error_log_start.php';
   ?>
 
@@ -50,7 +50,7 @@
             while($row = pg_fetch_row($result)) {
               if (password_verify($pwd, $row[2])) {
                 pg_query($conn, "UPDATE users SET usrLoginTime = CURRENT_TIMESTAMP() WHERE username='$usrn'");
-                $_SESSION["privileges"] = $row["privileges"];
+                $_SESSION["privileges"] = $row[3];
                 header("Location: admin.php");
               } else {
                 echo '<p>feil brukernavn eller passord</p>';
