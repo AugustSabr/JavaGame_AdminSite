@@ -92,11 +92,11 @@ window.onclick = function(event) {
     <h2 id="h1">Ofte stilte spørsmål (FAQ)</h2>
     <?php
       include 'php/connect.php';
-      $sql = "SELECT * FROM `faqs`";
-      $result = mysqli_query($conn, $sql);
+      $sql = "SELECT * FROM 'gameTables'.'faqs';";
+      $result = pg_query($conn, $sql);
 
-      if (0 < mysqli_num_rows($result)) {
-        while($row = mysqli_fetch_assoc($result)) {
+      if (0 < pg_num_rows($result)) {
+        while($row = pg_fetch_row($result)) {
           if ($row["seen"] == "y"){
             echo "
             <button type='button' class='faqCollapsible'>" . $row["qTitle"]. "</button>
