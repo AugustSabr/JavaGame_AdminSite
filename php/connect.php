@@ -1,16 +1,16 @@
 <?php
-$IP = "10.0.0.70";
-$Port = "5432";
-$database = "game4";
-$username = "postgres";
-$password = "123";
+$IP = "host=10.0.0.70";
+$Port = "port=5432";
+$database = "dbname=game4";
+$username = "user=postgres";
+$password = "password=123";
 
-echo "host=$IP port=$Port dbname=$database user=$username password=$password";
-$conn = pg_connect("host=$IP port=$Port dbname=$database user=$username password=$password");
+$conn_string = "$IP $Port $database $username $password";
+$conn = pg_connect("$conn_string");
 
 pg_query($dbconn, "select * from doesnotexist");
 
 if (!$conn) {
-  die("Connection failed: " .  pg_last_error($conn));
+  die("Connection failed: ");
 }
 ?>
