@@ -7,6 +7,8 @@ $password = "123";
 
 $conn = pg_connect("host=$IP port=$Port dbname=$database user=$username password=$password");
 
+pg_query($dbconn, "select * from doesnotexist");
+
 if (!$conn) {
   die("Connection failed: " .  pg_last_error($conn));
 }
