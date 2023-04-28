@@ -38,18 +38,18 @@
       <?php
         if(isset($_POST['submit'])){
           //Gjøre om POST-data til variabler
-          $usrn = mysqli_real_escape_string($conn, $_POST['username']);            
-          $pwd = mysqli_real_escape_string($conn, $_POST['passord']);
+          $usrn = pg_escape_string($conn, $_POST['username']);            
+          $pwd = pg_escape_string($conn, $_POST['passord']);
         
-          $sql = "SELECT * FROM users where username='$usrn'";
+          $sql = 'SELECT * FROM "gameTables"."users" where username='."'$usrn'";
         
-          $result = mysqli_query($conn, $sql)
+          $result = pg_query($conn, $sql)
             or die('Error connecting to database.');
         
-          if (0 < mysqli_num_rows($result)) {
-            while($row = mysqli_fetch_assoc($result)) {
+          if (0 < pg_num_rows($result)) {
+            while($row = pg_fetch_row($result)) {
               if (password_verify($pwd, $row["password"])) {
-                mysqli_query($conn, "UPDATE users SET usrLoginTime = CURRENT_TIMESTAMP() WHERE username='$usrn'");
+                pg_query($conn, "UPDATE users SET usrLoginTime = CURRENT_TIMESTAMP() WHERE username='$usrn'");
                 $_SESSION["privileges"] = $row["privileges"];
                 header("Location: admin.php");
               } else {
