@@ -51,7 +51,7 @@
       echo "0 results";
     }
 
-    mysqli_close($conn);
+    pg_close($conn);
   ?>
   <form method="POST" name="" action="php/insert.php">
     <input type="hidden" name="dbtable" value="user">

@@ -90,7 +90,7 @@
           }
         }
       }
-      mysqli_close($conn);
+      pg_close($conn);
     ?>
   </div>
 </body>

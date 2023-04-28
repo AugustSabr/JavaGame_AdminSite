@@ -66,10 +66,12 @@
       $sql = "DELETE FROM ".$dbtable."s WHERE id=$id;";
     }
 
-    if (mysqli_multi_query($conn, $sql)) {
+    if (pg_query($conn, $sql)) {
+      pg_close($conn);
       header($location);
     } else {
-      echo "Error updating record: " . mysqli_error($conn);
+      echo "Error ";
+      pg_close($conn);
     }
   } else {
     echo '<p>du skal ikke være her</p>';

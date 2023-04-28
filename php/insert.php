@@ -14,23 +14,22 @@
       $damageExists = pg_num_rows(pg_query($conn, "SHOW COLUMNS FROM ".$dbtable."s LIKE '".$dbtable."Damage'"));
       $healthExists = pg_num_rows(pg_query($conn, "SHOW COLUMNS FROM ".$dbtable."s LIKE '".$dbtable."Health'"));
 
-      $sql = "INSERT INTO ".$dbtable."s (".$dbtable."Type) VALUES ('$type');";
-
+      $sql = 'INSERT INTO "gameTables"."'$dbtable'"s ('$dbtable'Type) VALUES ('$type');';
       if($tierExists != 0){
         $tier =  pg_escape_string($conn, $_POST[$dbtable.'Tier']);
-        $sql .= "UPDATE ".$dbtable."s SET ".$dbtable."Tier = $tier WHERE ".$dbtable."Type='$type';";
+        $sql .= 'UPDATE "gameTables"."'$dbtable'"s SET '.$dbtable.'Tier = '.$tier.' WHERE '.$dbtable.'Type='$type';';
       }
       if($effectExists != 0){
         $effect =  pg_escape_string($conn, $_POST[$dbtable.'Effect']);
-        $sql .= "UPDATE ".$dbtable."s SET ".$dbtable."Effect = $effect WHERE ".$dbtable."Type='$type';";
+        $sql .= 'UPDATE "gameTables"."'$dbtable'"s SET '.$dbtable.'Effect = '.$effect.' WHERE '.$dbtable.'Type='$type';';
       }
       if($damageExists != 0){
         $damage =  pg_escape_string($conn, $_POST[$dbtable.'Damage']);
-        $sql .= "UPDATE ".$dbtable."s SET ".$dbtable."Damage = $damage WHERE ".$dbtable."Type='$type';";
+        $sql .= 'UPDATE "gameTables"."'$dbtable'"s SET '.$dbtable.'Damage = '.$damage.' WHERE '.$dbtable.'Type='$type';';
       }
       if($healthExists != 0){
         $health =  pg_escape_string($conn, $_POST[$dbtable.'Health']);
-        $sql .= "UPDATE ".$dbtable."s SET ".$dbtable."Health = $health WHERE ".$dbtable."Type='$type';";
+        $sql .= 'UPDATE "gameTables"."'$dbtable'"s SET '.$dbtable.'Health = '.$health.' WHERE '.$dbtable.'Type='$type';';
       }
     } else if($dbtable == 'user'){
       $location = "Location: ../manageProfiles.php";
@@ -49,10 +48,12 @@
       $sql = "INSERT INTO faqs (qName, qTitle, question) VALUES ('$qName', '$qTitle', '$question');";
     }
 
-    if (mysqli_multi_query($conn, $sql)) {
+    if (pg_query($conn, $sql)) {
+      pg_close($conn);
       header($location);
     } else {
-      echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+      echo "Error";
+      pg_close($conn);
     }
   } else {
     echo '<p>du skal ikke være her</p>';

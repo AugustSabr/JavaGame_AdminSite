@@ -60,7 +60,7 @@
             echo '<p>feil brukernavn eller passord</p>';
           }
         }
-        mysqli_close($conn);
+        pg_close($conn);
       ?>
 
   </div>
@@ -114,7 +114,7 @@ window.onclick = function(event) {
       } else {
         echo "0 results";
       }
-      mysqli_close($conn);
+      pg_close($conn);
     ?>
     <div>
       <h3 id="h1">Still ditt eget spørsmål:</h3>
