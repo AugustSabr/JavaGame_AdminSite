@@ -24,24 +24,24 @@
   <h1 id="h1">Brukeroversikt</h1>
   <?php
     include 'php/connect.php';
-    $sql = "SELECT * FROM `users`";
-    $result = mysqli_query($conn, $sql);
+    $sql = 'SELECT * FROM "gameTables"."users";';
+    $result = pg_query($conn, $sql);
 
-    if (0 < mysqli_num_rows($result)) {
+    if (0 < pg_num_rows($result)) {
       echo "<h2>Admin brukere</h2>";
-      while($row = mysqli_fetch_assoc($result)) {
+      while($row = pg_fetch_row($result)) {
         echo "
         <form method='POST' name='' action='php/update.php'>
         <input type='hidden' name='dbtable' value='user'>
-        <label for='type'>Id: " . $row["id"]. "</label>
-        <input type='hidden' name='id' value=" . $row["id"]. ">
+        <label for='type'>Id: " . $row[0]. "</label>
+        <input type='hidden' name='id' value=" . $row[0]. ">
         <label for='type'>Username:</label>
-        <input type='text' name='username' style='width: 120px' value='" . $row["username"] . "'>
+        <input type='text' name='username' style='width: 120px' value='" . $row[1] . "'>
         <label for='type'>New Password:</label>
         <input type='text' name='password' style='width: 120px' value=''>
         <label>Privileges:</label>
-        <input type='text' name='privileges' style='width: 45px' value='" . $row["privileges"]. "'>
-        <label>Last login/create date: " . $row["usrLoginTime"]. "</label>
+        <input type='text' name='privileges' style='width: 45px' value='" . $row[3]. "'>
+        <label>Last login/create date: " . $row[4]. "</label>
         <button type='hidden' name='action' value='update'>update</button>
         <button type='submit' name='action' value='remove'>delete</button>
         </form>";
