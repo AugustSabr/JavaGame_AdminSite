@@ -1,10 +1,11 @@
 <?php
 $IP = "10.0.0.70";
-$username = "Admin";
-$password = "HmBw1yvcYpkawfFu";
+$Port = "5432"
 $database = "game4";
+$username = "postgres";
+$password = "123";
 
-$conn = mysqli_connect($IP, $username, $password, $database);
+$conn = pg_connect("$IP $Port $database $username $password");
 
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
