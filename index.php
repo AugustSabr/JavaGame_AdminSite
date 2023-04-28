@@ -92,7 +92,7 @@ window.onclick = function(event) {
     <h2 id="h1">Ofte stilte spørsmål (FAQ)</h2>
     <?php
       include 'php/connect.php';
-      $sql = "SELECT * FROM 'gameTables'.'faqs';";
+      $sql = 'SELECT * FROM "gameTables"."faqs";';
       $result = pg_query($conn, $sql);
 
       if (0 < pg_num_rows($result)) {
