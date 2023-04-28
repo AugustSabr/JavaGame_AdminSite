@@ -53,11 +53,11 @@
                 $_SESSION["privileges"] = $row["privileges"];
                 header("Location: admin.php");
               } else {
-                echo '<p>feil brukernavn eller passord</p>';
+                echo '<p>feil brukernavn eller passord2</p>';
               }
             }
           } else {
-            echo '<p>feil brukernavn eller passord</p>';
+            echo '<p>feil brukernavn eller passord1</p>';
           }
         }
       ?>
