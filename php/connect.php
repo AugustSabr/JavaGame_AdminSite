@@ -5,7 +5,7 @@ $database = "game4";
 $username = "postgres";
 $password = "123";
 
-$conn = pg_connect("$IP $Port $database $username $password");
+$conn = pg_connect("host=$IP port=$Port dbname=$database user=$username password=$password");
 
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
