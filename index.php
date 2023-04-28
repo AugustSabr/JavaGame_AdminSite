@@ -3,7 +3,6 @@
     if (isset($_SESSION['privileges'])) {
       unset($_SESSION['privileges']);
     }
-    include './php/connect.php';
     include './error_log_start.php';
   ?>
 
@@ -36,6 +35,7 @@
       </form>
 
       <?php
+        include './php/connect.php';
         if(isset($_POST['submit'])){
           //Gjøre om POST-data til variabler
           $usrn = pg_escape_string($conn, $_POST['username']);            
@@ -60,6 +60,7 @@
             echo '<p>feil brukernavn eller passord</p>';
           }
         }
+        mysqli_close($conn);
       ?>
 
   </div>
@@ -113,6 +114,7 @@ window.onclick = function(event) {
       } else {
         echo "0 results";
       }
+      mysqli_close($conn);
     ?>
     <div>
       <h3 id="h1">Still ditt eget spørsmål:</h3>
