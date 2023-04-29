@@ -24,7 +24,7 @@
   <h1 id="h1">Brukeroversikt</h1>
   <?php
     include 'php/connect.php';
-    $sql = 'SELECT * FROM "webTables"."users" ORDER BY "usrLogintime" ASC;';
+    $sql = 'SELECT * FROM "webTables"."users" ORDER BY "usrLogintime" DESC;';
     $result = pg_query($conn, $sql);
 
     if (0 < pg_num_rows($result)) {
