@@ -45,7 +45,7 @@
           $sql = 'UPDATE "webTables".'.$dbtable.'s SET "username" = '."'$username'".', "privileges" = '."'$privileges', WHERE id='$id';";
         } else {
           $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
-          $sql = 'UPDATE "webTables".'.$dbtable.'s SET "username" = '."'$username'".', "password" = '."'$hashedPwd'"', "privileges" = '."'$privileges', WHERE id='$id';";
+          $sql = 'UPDATE "webTables".'.$dbtable.'s SET "username" = '."'$username'".', "password" = '."'$hashedPwd'".', "privileges" = '."'$privileges', WHERE id='$id';";
         }
       }
     } else if($dbtable == 'faq'){
