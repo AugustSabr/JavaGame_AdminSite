@@ -72,7 +72,7 @@ INSERT INTO "webTables".faqs ("qName", "qTitle", "question", "aName", "answer", 
 ('b', 'b', 'b', '', NULL, 'n'),
 ('a', 'a', 'a', '', NULL, 'n');
 
-INSERT INTO "webTables".users ("username", "password", "privileges", "usrLogintime") VALUES
+INSERT INTO "webTables".users ("username", "password", "privileges", "usrLoginTime") VALUES
 ('Admin', '$2y$10$cS4BpGesVsuoqnZkub6raeDDLjF42szxwbPnLZlNDjJcwu/vOaBc2', 'all', '2023-01-31 21:06:07'),
 ('aa', '$2y$10$F.qDeG7m0alh1iX4eGZPc.v5LP/9HGsxUJYiFF75U5xsHkaoPCLVW', 'all', '2023-04-26 13:04:39'),
 ('web', '$2y$10$ERHwbeDQorGsR2p2UItdGOS5tuXJK/mFJdP24WVWbgkhDS.z.TIKq', 'web', '2023-03-06 11:29:21'),
