@@ -45,7 +45,7 @@
       $qTitle =  pg_escape_string($conn, $_POST['qTitle']);
       $question = pg_escape_string($conn, $_POST['question']);
 
-      $sql = "INSERT INTO faqs (qName, qTitle, question) VALUES ('$qName', '$qTitle', '$question');";
+      $sql = 'INSERT INTO "webTables".faqs ("qName", "qTitle", "question") VALUES '."('$qName', '$qTitle', '$question');";
     }
 
     if (pg_query($conn, $sql)) {
