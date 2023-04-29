@@ -49,7 +49,7 @@
           if (0 < pg_num_rows($result)) {
             while($row = pg_fetch_row($result)) {
               if (password_verify($pwd, $row[2])) {
-                pg_query($conn, 'UPDATE "webTables".users SET "usrLoginTime" = CURRENT_TIMESTAMP() WHERE "id"='."'$row[0]';");
+                pg_query($conn, 'UPDATE "webTables".users SET "usrLoginTime" = '."'".CURRENT_TIMESTAMP()."'".' WHERE "id"='."'$row[0]';");
                 $_SESSION["privileges"] = $row[3];
                 header("Location: admin.php");
               } else {
