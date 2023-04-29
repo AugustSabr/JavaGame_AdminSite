@@ -90,3 +90,5 @@ INSERT INTO "webTables".users ("username", "password", "privileges", "usrLoginti
     "armorType" character varying(255),
     "armorEffect" integer
 );
+
+/var/www/Arsoppgave/JavaGame_Adminsite
