@@ -91,4 +91,9 @@ INSERT INTO "webTables".users ("username", "password", "privileges", "usrLoginti
     "armorEffect" integer
 );
 
+
+UPDATE "gameTables".armors SET "armorType" = 'worn cloths' WHERE id='1';
+
+DELETE FROM "gameTables".blessings WHERE id='8';
+
 /var/www/Arsoppgave/JavaGame_Adminsite

@@ -14,7 +14,7 @@
       $damageExists = pg_num_rows(pg_query($conn, "SHOW COLUMNS FROM ".$dbtable."s LIKE '".$dbtable."Damage'"));
       $healthExists = pg_num_rows(pg_query($conn, "SHOW COLUMNS FROM ".$dbtable."s LIKE '".$dbtable."Health'"));
 
-      $sql = 'INSERT INTO "gameTables"."'.$dbtable.'"s ('.$dbtable.'Type) VALUES ('.$type.');';
+      $sql = 'INSERT INTO "gameTables"."'.$dbtable.'"s ("'.$dbtable.'Type") VALUES ('."'".$type."'"');';
       if($tierExists != 0){
         $tier =  pg_escape_string($conn, $_POST[$dbtable.'Tier']);
         $sql .= 'UPDATE "gameTables"."'.$dbtable.'"s SET '.$dbtable.'Tier = '.$tier.' WHERE '.$dbtable.'Type='.$type.';';
@@ -38,7 +38,7 @@
       $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
       $privileges =  pg_escape_string($conn, $_POST['privileges']);
 
-      $sql = "INSERT INTO users (username, password, privileges) VALUES ('$username', '$hashedPwd', '$privileges');";
+      $sql = 'INSERT INTO "webTables".users ("username", "password", "privileges") VALUES '."('$username', '$hashedPwd', '$privileges');";
     } else if($dbtable == 'faq'){
       $location = "Location: ../index.php";
       $qName =  pg_escape_string($conn, $_POST['qName']);

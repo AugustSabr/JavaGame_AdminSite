@@ -49,7 +49,7 @@
             <label>answer</label>
             <textarea name='answer' cols='30' rows='1'>" . $row[5] . "</textarea>
             <label>besvart: y/n</label>
-            <input type='text' name='seen' style='width: 20px' value='" . $row[6]. "'>
+            <input type='text' name='show' style='width: 20px' value='" . $row[6]. "'>
             <button type='hidden' name='action' value='update'>update</button>
             <button type='submit' name='action' value='remove'>delete</button>
             </form>";
@@ -82,7 +82,7 @@
             <label>answer</label>
             <textarea name='answer' cols='30' rows='1'>" . $row[5] . "</textarea>
             <label>besvart: y/n</label>
-            <input type='text' name='seen' style='width: 20px' value='" . $row[6]. "'>
+            <input type='text' name='show' style='width: 20px' value='" . $row[6]. "'>
             <button type='hidden' name='action' value='update'>update</button>
             <button type='submit' name='action' value='remove'>delete</button>
             </form>";
