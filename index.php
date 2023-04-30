@@ -93,29 +93,30 @@ window.onclick = function(event) {
     <h2 id="h1">Ofte stilte spørsmål (FAQ)</h2>
     <?php
       include 'php/connect.php';
-      $sql = 'SELECT * FROM "webTables".faqs;';
+      // $sql = 'SELECT * FROM "webTables".faqs;';
+      $sql = 'INSERT INTO "gameTables".img ("connectedTable", "connectedID", "binaryFile") VALUES ('."'wawa', '1',".pg_read_binary_file('./img/shop.png').");";
+      // echo pg_read_binary_file('./img/shop.png')
       $result = pg_query($conn, $sql);
 
-      if (0 < pg_num_rows($result)) {
-        while($row = pg_fetch_row($result)) {
-          if ($row[6] == "y"){
-            echo "
-            <button type='button' class='faqCollapsible'>" . $row[2]. "</button>
-            <div class='faqContent'>
-              <h3>" . $row[1]. "</h3>
-              <p>" . $row[3]. "</p>
+      // if (0 < pg_num_rows($result)) {
+      //   while($row = pg_fetch_row($result)) {
+      //     if ($row[6] == "y"){
+      //       echo "
+      //       <button type='button' class='faqCollapsible'>" . $row[2]. "</button>
+      //       <div class='faqContent'>
+      //         <h3>" . $row[1]. "</h3>
+      //         <p>" . $row[3]. "</p>
 
-              <h4>" . $row[4]. "</h4>
-              <p>" . $row[6]. "</p>
-            </div>
-            ";
-          }
-        }
-      } else {
-        echo "0 results";
-      }
+      //         <h4>" . $row[4]. "</h4>
+      //         <p>" . $row[6]. "</p>
+      //       </div>
+      //       ";
+      //     }
+      //   }
+      // } else {
+      //   echo "0 results";
+      // }
       pg_close($conn);
-      echo pg_read_binary_file('./img/shop.png')
     ?>
     <div>
       <h3 id="h1">Still ditt eget spørsmål:</h3>
