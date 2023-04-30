@@ -14,7 +14,7 @@
       $damageExists = pg_num_rows(pg_query($conn, "SELECT column_name FROM information_schema.columns WHERE table_name='".$dbtable."s' and column_name='".$dbtable."Damage';"));
       $healthExists = pg_num_rows(pg_query($conn, "SELECT column_name FROM information_schema.columns WHERE table_name='".$dbtable."s' and column_name='".$dbtable."Health';"));
 
-      $sql = 'INSERT INTO "gameTables"."'.$dbtable.'"s ("'.$dbtable.'Type") VALUES ('."'".$type."'"');';
+      $sql = 'INSERT INTO "gameTables"."'.$dbtable.'"s ("'.$dbtable.'Type") VALUES ('."'".$type."'".');';
       if($tierExists != 0){
         $tier =  pg_escape_string($conn, $_POST[$dbtable.'Tier']);
         $sql .= 'UPDATE "gameTables"."'.$dbtable.'"s SET '.$dbtable.'Tier = '.$tier.' WHERE '.$dbtable.'Type='.$type.';';
