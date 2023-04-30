@@ -62,9 +62,17 @@
       }
     }
     if ($_POST["action"] == 'remove'){
-      $sql = "DELETE FROM ".$dbtable."s WHERE id=$id;";
+      if($dbtable == 'weapon' || $dbtable == 'armor' || $dbtable == 'blessing'|| $dbtable == 'enemy'){
+        $location = "Location: ../tables.php";
+        $sql = 'DELETE FROM "gameTables".'.$dbtable.'s WHERE id='$id';';
+      } else if($dbtable == 'faq'){
+        $location = "Location: ../manageFAQ.php";
+        $sql = 'DELETE FROM "webTables".'.$dbtable.'s WHERE id='$id';';
+      } else if($dbtable == 'user'){
+        $location = "Location: ../manageProfiles.php";
+        $sql = 'DELETE FROM "webTables".'.$dbtable.'s WHERE id='$id';';
+      }
     }
-
     if (pg_query($conn, $sql)) {
       pg_close($conn);
       header($location);
