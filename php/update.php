@@ -10,6 +10,8 @@
 
     if($dbtable == 'weapon' || $dbtable == 'armor' || $dbtable == 'blessing'|| $dbtable == 'enemy'){
       $location = "Location: ../tables.php";
+      $schema = '"gameTables"';
+
       if ($_POST["action"] == 'update'){
         $tierExists = pg_num_rows(pg_query($conn, "SELECT column_name FROM information_schema.columns WHERE table_name='".$dbtable."s' and column_name='".$dbtable."Tier';"));
         $effectExists = pg_num_rows(pg_query($conn, "SELECT column_name FROM information_schema.columns WHERE table_name='".$dbtable."s' and column_name='".$dbtable."Effect';"));
@@ -37,6 +39,7 @@
       }
     } else if($dbtable == 'user'){
       $location = "Location: ../manageProfiles.php";
+      $schema = '"webTables"';
       if ($_POST["action"] == 'update'){
         $username =  pg_escape_string($conn, $_POST['username']);
         $password =  pg_escape_string($conn, $_POST['password']);
@@ -50,6 +53,7 @@
       }
     } else if($dbtable == 'faq'){
       $location = "Location: ../manageFAQ.php";
+      $schema = '"webTables"';
       if ($_POST["action"] == 'update'){
         $qName =  pg_escape_string($conn, $_POST['qName']);
         $qTitle =  pg_escape_string($conn, $_POST['qTitle']);
@@ -62,16 +66,7 @@
       }
     }
     if ($_POST["action"] == 'remove'){
-      if($dbtable == 'weapon' || $dbtable == 'armor' || $dbtable == 'blessing'|| $dbtable == 'enemy'){
-        $location = "Location: ../tables.php";
-        $sql = 'DELETE FROM "gameTables".'.$dbtable.'s WHERE id='$id';';
-      } else if($dbtable == 'faq'){
-        $location = "Location: ../manageFAQ.php";
-        $sql = 'DELETE FROM "webTables".'.$dbtable.'s WHERE id='$id';';
-      } else if($dbtable == 'user'){
-        $location = "Location: ../manageProfiles.php";
-        $sql = 'DELETE FROM "webTables".'.$dbtable.'s WHERE id='$id';';
-      }
+      $sql = "DELETE FROM "$schema"."$dbtable"s WHERE id='$id';";
     }
     if (pg_query($conn, $sql)) {
       pg_close($conn);
