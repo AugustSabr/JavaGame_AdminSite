@@ -94,7 +94,6 @@ window.onclick = function(event) {
     <?php
       include 'php/connect.php';
       $sql = 'SELECT * FROM "webTables".faqs;';
-      echo pg_read_binary_file('./img/shop.png')
       $result = pg_query($conn, $sql);
 
       if (0 < pg_num_rows($result)) {
@@ -156,7 +155,7 @@ window.onclick = function(event) {
 </script>
 <?php
   include 'php/connect.php';
-    
+
   $connectedDatabase = "weapons";
   $filePath = "./img/weapons/stick.png";
   $image = fopen($filePath, 'r') or die("Unable to open the file.");
