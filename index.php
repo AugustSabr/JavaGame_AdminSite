@@ -170,16 +170,16 @@ window.onclick = function(event) {
   // pg_close($conn);
 
   //Read the image data from the table
-  $sql = 'SELECT "binaryFile" FROM "gameTables".img WHERE "connectedID"=1';
-  $result = pg_query($conn, $sql) or die (pg_last_error($conn));
-  $data = pg_fetch_result($result, '"binaryFile"');
-  $cimage = pg_unescape_bytea($data);
+  // $sql = 'SELECT "binaryFile" FROM "gameTables".img WHERE "connectedID"=1';
+  // $result = pg_query($conn, $sql) or die (pg_last_error($conn));
+  // $data = pg_fetch_result($result, '"binaryFile"');
+  // $cimage = pg_unescape_bytea($data);
 
-  //Create an image file with the image data retrieved from the table
-  $image = fopen($filePath, 'wb') or die("Unable to open image.");
-  fwrite($image, $cimage) or die("Unable to write data.");
-  fclose($image);
-  pg_close($conn);
+  // //Create an image file with the image data retrieved from the table
+  // $image = fopen($filePath, 'wb') or die("Unable to open image.");
+  // fwrite($image, $cimage) or die("Unable to write data.");
+  // fclose($image);
+  // pg_close($conn);
 
   //Display the image in the browser
   echo "<img src='".$filePath."' height=200 width=300 />";
