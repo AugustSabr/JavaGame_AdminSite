@@ -114,7 +114,7 @@
 
       <?php
       include 'php/connect.php';
-      $sql = 'SELECT * FROM "gameTables"."blessings";';
+      $sql = 'SELECT * FROM "gameTables"."blessings" ORDER BY "id" ASC;';
       $result = pg_query($conn, $sql);
 
       if (0 < pg_num_rows($result)) {
