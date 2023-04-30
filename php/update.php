@@ -66,7 +66,7 @@
       }
     }
     if ($_POST["action"] == 'remove'){
-      $sql = "DELETE FROM "$schema"."$dbtable"s WHERE id='$id';";
+      $sql = "DELETE FROM $schema.".$dbtable."s WHERE id='$id';";
     }
     if (pg_query($conn, $sql)) {
       pg_close($conn);
