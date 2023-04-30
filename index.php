@@ -115,6 +115,7 @@ window.onclick = function(event) {
         echo "0 results";
       }
       pg_close($conn);
+      echo pg_read_binary_file('./img/shop.png')
     ?>
     <div>
       <h3 id="h1">Still ditt eget spørsmål:</h3>
