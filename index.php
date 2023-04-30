@@ -41,7 +41,7 @@
           $usrn = pg_escape_string($conn, $_POST['username']);            
           $pwd = pg_escape_string($conn, $_POST['passord']);
         
-          $sql = 'SELECT * FROM "webTables"."users" where username='."'$usrn'";
+          $sql = 'SELECT * FROM "webTables".users where username='."'$usrn'";
         
           $result = pg_query($conn, $sql)
             or die('Error connecting to database.');
@@ -93,7 +93,7 @@ window.onclick = function(event) {
     <h2 id="h1">Ofte stilte spørsmål (FAQ)</h2>
     <?php
       include 'php/connect.php';
-      $sql = 'SELECT * FROM "webTables"."faqs";';
+      $sql = 'SELECT * FROM "webTables".faqs;';
       $result = pg_query($conn, $sql);
 
       if (0 < pg_num_rows($result)) {

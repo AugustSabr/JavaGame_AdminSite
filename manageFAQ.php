@@ -27,7 +27,7 @@
     <h3>godkjente spørsmål</h3>
     <?php
       include 'php/connect.php';
-      $sql = 'SELECT * FROM "webTables"."faqs"  ORDER BY "id" ASC;';
+      $sql = 'SELECT * FROM "webTables".faqs  ORDER BY "id" ASC;';
       $result = pg_query($conn, $sql);
 
       if (0 < pg_num_rows($result)) {
