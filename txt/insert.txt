@@ -96,4 +96,12 @@ UPDATE "gameTables".armors SET "armorType" = 'worn cloths' WHERE id='1';
 
 DELETE FROM "gameTables".blessings WHERE id='8';
 
-/var/www/Arsoppgave/JavaGame_Adminsite
+/var/www/Arsoppgave/JavaGame_Adminsite/
+
+sudo chown -R apache2:apache2 /var/www/Arsoppgave/JavaGame_Adminsite/
+
+sudo chcon -R -t httpd_sys_content_t /var/www/Arsoppgave/JavaGame_Adminsite/
+
+sudo chcon -R -t httpd_sys_rw_content_t /var/www/Arsoppgave/JavaGame_Adminsite/
+
+sudo systemctl restart httpd
