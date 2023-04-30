@@ -9,10 +9,10 @@
       $location = "Location: ../tables.php";
       $type = pg_escape_string($conn, $_POST[$dbtable.'Type']);
 
-      $tierExists = pg_num_rows(pg_query($conn, "SHOW COLUMNS FROM ".$dbtable."s LIKE '".$dbtable."Tier'"));
-      $effectExists = pg_num_rows(pg_query($conn, "SHOW COLUMNS FROM ".$dbtable."s LIKE '".$dbtable."Effect'"));
-      $damageExists = pg_num_rows(pg_query($conn, "SHOW COLUMNS FROM ".$dbtable."s LIKE '".$dbtable."Damage'"));
-      $healthExists = pg_num_rows(pg_query($conn, "SHOW COLUMNS FROM ".$dbtable."s LIKE '".$dbtable."Health'"));
+      $tierExists = pg_num_rows(pg_query($conn, "SELECT column_name FROM information_schema.columns WHERE table_name='".$dbtable."s' and column_name='".$dbtable."Tier';"));
+      $effectExists = pg_num_rows(pg_query($conn, "SELECT column_name FROM information_schema.columns WHERE table_name='".$dbtable."s' and column_name='".$dbtable."Effect';"));
+      $damageExists = pg_num_rows(pg_query($conn, "SELECT column_name FROM information_schema.columns WHERE table_name='".$dbtable."s' and column_name='".$dbtable."Damage';"));
+      $healthExists = pg_num_rows(pg_query($conn, "SELECT column_name FROM information_schema.columns WHERE table_name='".$dbtable."s' and column_name='".$dbtable."Health';"));
 
       $sql = 'INSERT INTO "gameTables"."'.$dbtable.'"s ("'.$dbtable.'Type") VALUES ('."'".$type."'"');';
       if($tierExists != 0){
