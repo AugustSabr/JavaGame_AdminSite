@@ -176,7 +176,7 @@ window.onclick = function(event) {
   $cimage = pg_unescape_bytea($cdata);
 
   //Create an image file with the image data retrieved from the table
-  $image = fopen($filePath, 'wb') or die("Unable to open image.");
+  $image = fopen($filePath, 'w') or die("Unable to open image.");
   fwrite($image, $cimage) or die("Unable to write data.");
   fclose($image);
   pg_close($conn);
