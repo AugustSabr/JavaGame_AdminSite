@@ -163,26 +163,26 @@ window.onclick = function(event) {
   $cdata = pg_escape_bytea($data);
   fclose($image);
   
-  //Insert the image data
-  $sql = 'INSERT INTO "gameTables".img ("connectedTable", "connectedID", "binaryFile", "filePath") VALUES ('."'$connectedDatabase', '2', '$cdata', '$filePath');";
-  $result = pg_query($conn, $sql);
-  if($result) echo "Image data is inserted successfully.";
-  pg_close($conn);
+  // //Insert the image data
+  // $sql = 'INSERT INTO "gameTables".img ("connectedTable", "connectedID", "binaryFile", "filePath") VALUES ('."'$connectedDatabase', '2', '$cdata', '$filePath');";
+  // $result = pg_query($conn, $sql);
+  // if($result) echo "Image data is inserted successfully.";
+  // pg_close($conn);
 
   // //Read the image data from the table
   // $sql = 'SELECT "binaryFile" FROM "gameTables".img WHERE "connectedID"=1';
   // $result = pg_query($conn, $sql) or die (pg_last_error($conn));
   // $data = pg_fetch_result($result, '"binaryFile"');
-  // $cimage = pg_unescape_bytea($data);
+  $cimage = pg_unescape_bytea($cdata);
 
-  // //Create an image file with the image data retrieved from the table
-  // $image = fopen($filePath, 'wb') or die("Unable to open image.");
-  // fwrite($image, $cimage) or die("Unable to write data.");
-  // fclose($image);
-  // pg_close($conn);
+  //Create an image file with the image data retrieved from the table
+  $image = fopen($filePath, 'wb') or die("Unable to open image.");
+  fwrite($image, $cimage) or die("Unable to write data.");
+  fclose($image);
+  pg_close($conn);
 
-  // //Display the image in the browser
-  // echo "<img src='".$filePath."' height=200 width=300 />";
+  //Display the image in the browser
+  echo "<img src='".$filePath."' height=200 width=300 />";
 ?>
 
 </body>
