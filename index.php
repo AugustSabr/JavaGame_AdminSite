@@ -197,7 +197,7 @@ window.onclick = function(event) {
     $raw = pg_fetch_result($res, "binaryFile");
     
     // Convert to binary and send to the browser
-    header('Content-type: image/png');
+    // header('Content-type: image/png');
     echo base64_decode($raw);
 ?>
 
