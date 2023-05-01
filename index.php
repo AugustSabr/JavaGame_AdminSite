@@ -164,7 +164,7 @@ window.onclick = function(event) {
   fclose($image);
   
   //Insert the image data
-  $sql = 'INSERT INTO "gameTables".img ("connectedTable", "connectedID", "binaryFile", "filePath") VALUES ('."'$connectedDatabase', '2', '$cdata', '$filePath');";
+  $sql = 'INSERT INTO "gameTables".img ("connectedTable", "connectedID", "binaryFile", "filePath") VALUES ('."'$connectedDatabase', '2', '{$cdata}', '$filePath');";
   $result = pg_query($conn, $sql);
   if($result) echo "Image data is inserted successfully.";
   pg_close($conn);
