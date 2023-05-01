@@ -156,18 +156,18 @@ window.onclick = function(event) {
 <?php
   include 'php/connect.php';
 
-  $connectedDatabase = "weapons";
-  $filePath = "shop.png";
-  $image = fopen($filePath, 'r') or die("Unable to open the file.");
-  $data = fread($image, filesize($filePath));
-  $cdata = pg_escape_bytea($data);
-  fclose($image);
+  // $connectedDatabase = "weapons";
+  // $filePath = "shop.png";
+  // $image = fopen($filePath, 'r') or die("Unable to open the file.");
+  // $data = fread($image, filesize($filePath));
+  // $cdata = pg_escape_bytea($data);
+  // fclose($image);
   
-  //Insert the image data
-  $sql = 'INSERT INTO "gameTables".img ("connectedTable", "connectedID", "binaryFile", "filePath") VALUES ('."'$connectedDatabase', '2', '{$cdata}', '$filePath');";
-  $result = pg_query($conn, $sql);
-  if($result) echo "Image data is inserted successfully.";
-  pg_close($conn);
+  // //Insert the image data
+  // $sql = 'INSERT INTO "gameTables".img ("connectedTable", "connectedID", "binaryFile", "filePath") VALUES ('."'$connectedDatabase', '2', '$cdata', '$filePath');";
+  // $result = pg_query($conn, $sql);
+  // if($result) echo "Image data is inserted successfully.";
+  // pg_close($conn);
 
   // //Read the image data from the table
   // $sql = 'SELECT "binaryFile" FROM "gameTables".img WHERE "connectedID"=1';
@@ -181,8 +181,24 @@ window.onclick = function(event) {
   // fclose($image);
   // pg_close($conn);
 
-  //Display the image in the browser
-  echo "<img src='".$filePath."' height=200 width=300 />";
+  // //Display the image in the browser
+  // echo "<img src='".$filePath."' height=200 width=300 />";
+
+    // Read in a binary file
+    $data = file_get_contents( 'shop.png' );
+  
+    // Escape the binary data
+    $escaped = bin2hex( $data );
+    
+    // Insert it into the database
+    pg_query( 'INSERT INTO "gameTables".img ("connectedTable", "connectedID", "binaryFile", "filePath") VALUES ('."Pine trees', '5', decode('{$escaped}', 'hex'), '3')");
+    // Get the bytea data
+    $res = pg_query('SELECT encode("binaryFile", '."'base64') AS data FROM gallery WHERE ".'"connectedID"='."'5'");  
+    $raw = pg_fetch_result($res, "binaryFile");
+    
+    // Convert to binary and send to the browser
+    header('Content-type: image/jpeg');
+    echo base64_decode($raw);
 ?>
 
 </body>
