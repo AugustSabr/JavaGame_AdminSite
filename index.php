@@ -157,7 +157,7 @@ window.onclick = function(event) {
   include 'php/connect.php';
 
   $connectedDatabase = "weapons";
-  $filePath = "./img/weapons/stick.png";
+  $filePath = "img/weapons/stick.png";
   $image = fopen($filePath, 'r') or die("Unable to open the file.");
   $data = fread($image, filesize($filePath));
   $cdata = pg_escape_bytea($data);

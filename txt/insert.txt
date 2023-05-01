@@ -105,3 +105,5 @@ sudo chcon -R -t httpd_sys_content_t /var/www/Arsoppgave/JavaGame_Adminsite/
 sudo chcon -R -t httpd_sys_rw_content_t /var/www/Arsoppgave/JavaGame_Adminsite/
 
 sudo systemctl restart httpd
+
+setenforce 0 // turn of SELinux
