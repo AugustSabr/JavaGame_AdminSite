@@ -41,7 +41,7 @@
           $usrn = pg_escape_string($conn, $_POST['username']);            
           $pwd = pg_escape_string($conn, $_POST['passord']);
         
-          $sql = 'SELECT * FROM "gameTables"."users" where username='."'$usrn'";
+          $sql = 'SELECT * FROM "gameTables".users where username='."'$usrn'";
         
           $result = pg_query($conn, $sql)
             or die('Error connecting to database.');
