@@ -41,7 +41,7 @@
           $usrn = pg_escape_string($conn, $_POST['username']);            
           $pwd = pg_escape_string($conn, $_POST['passord']);
         
-          $sql = 'SELECT * FROM "gameTables".users where username='."'$usrn'";
+          $sql = 'SELECT * FROM "webTables"."users" where username='."'$usrn'";
         
           $result = pg_query($conn, $sql)
             or die('Error connecting to database.');
@@ -49,7 +49,7 @@
           if (0 < pg_num_rows($result)) {
             while($row = pg_fetch_row($result)) {
               if (password_verify($pwd, $row[2])) {
-                pg_query($conn, "UPDATE users SET usrLoginTime = CURRENT_TIMESTAMP() WHERE username='$usrn'");
+                pg_query($conn, 'UPDATE "webTables".users SET "usrLoginTime" = '."'now()'".' WHERE "id"='."'$row[0]';");
                 $_SESSION["privileges"] = $row[3];
                 header("Location: admin.php");
               } else {
@@ -93,7 +93,7 @@ window.onclick = function(event) {
     <h2 id="h1">Ofte stilte spørsmål (FAQ)</h2>
     <?php
       include 'php/connect.php';
-      $sql = 'SELECT * FROM "gameTables"."faqs";';
+      $sql = 'SELECT * FROM "webTables".faqs;';
       $result = pg_query($conn, $sql);
 
       if (0 < pg_num_rows($result)) {
