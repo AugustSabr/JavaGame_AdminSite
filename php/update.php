@@ -2,7 +2,7 @@
   session_start();
   include 'connect.php';
   if(!$_SESSION["privileges"] == "all" && !$_SESSION["privileges"] == "web" && !$_SESSION["privileges"] == "game"){
-    header("Location: index.php");
+    header("Location: ../index.php");
   }
   if (isset($_POST["action"])){
     $dbtable = $_POST['dbtable'];
