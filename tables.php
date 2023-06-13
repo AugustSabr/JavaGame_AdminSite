@@ -45,7 +45,7 @@
           <label>Damage:</label>
           <input type='number' name='weaponEffect' style='width: 30px' value='" . $row[3]. "'>
           <label>Path:</label>
-          <input type='number' name='path' style='width: 30px' value='" . $row[4]. "'>
+          <input type='text' name='path' style='width: 30px' value='" . $row[4]. "'>
           <label>Value:</label>
           <input type='number' name='value' style='width: 30px' value='" . $row[5]. "'>
           <button type='hidden' name='action' value='update'>update</button>
@@ -93,7 +93,7 @@
           <label>Defence:</label>
           <input type='number' name='armorEffect' style='width: 30px' value='" . $row[3]. "'>
           <label>Path:</label>
-          <input type='number' name='path' style='width: 30px' value='" . $row[4]. "'>
+          <input type='text' name='path' style='width: 30px' value='" . $row[4]. "'>
           <label>Value:</label>
           <input type='number' name='value' style='width: 30px' value='" . $row[5]. "'>
           <button type='hidden' name='action' value='update'>update</button>
@@ -183,7 +183,7 @@
           <label>Damage:</label>
           <input type='number' name='enemyDamage' style='width: 30px' value='" . $row[4]. "'>
           <label>Path:</label>
-          <input type='number' name='path' style='width: 30px' value='" . $row[5]. "'>
+          <input type='text' name='path' style='width: 30px' value='" . $row[5]. "'>
           <label>Speed:</label>
           <input type='number' name='speed' style='width: 30px' value='" . $row[6]. "'>
           <label>Endurance:</label>
