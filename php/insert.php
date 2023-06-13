@@ -35,7 +35,7 @@
         $health =  pg_escape_string($conn, $_POST[$dbtable.'Health']);
         $sql .= 'UPDATE "gameTables".'.$dbtable.'s SET "'.$dbtable.'Health" = '."'$health' WHERE ".'"'.$dbtable.'Type"='."'$type';";
       }
-      if($speedExists != 0){
+      if($speedExists != 0 && !pg_escape_string($conn, $_POST['speed']) == ""){
         $speed =  pg_escape_string($conn, $_POST['speed']);
         $sql .= 'UPDATE "gameTables".'.$dbtable.'s SET speed = '."'$speed' WHERE ".'"'.$dbtable.'Type"='."'$type';";
       }
