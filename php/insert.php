@@ -21,35 +21,35 @@
       $sql = 'INSERT INTO "gameTables".'.$dbtable.'s ("'.$dbtable.'Type") VALUES ('."'".$type."'".');';
       if($tierExists != 0){
         $tier =  pg_escape_string($conn, $_POST[$dbtable.'Tier']);
-        $sql .= 'UPDATE "gameTables".'.$dbtable.'s SET "'.$dbtable.'Tier" = '."'$tier' WHERE id='$id';";
+        $sql .= 'UPDATE "gameTables".'.$dbtable.'s SET "'.$dbtable.'Tier" = '."'$tier' WHERE ".'"'.$dbtable.'Type"='."'$type';";
       }
       if($effectExists != 0){
         $effect =  pg_escape_string($conn, $_POST[$dbtable.'Effect']);
-        $sql .= 'UPDATE "gameTables".'.$dbtable.'s SET "'.$dbtable.'Effect" = '."'$effect' WHERE id='$id';";
+        $sql .= 'UPDATE "gameTables".'.$dbtable.'s SET "'.$dbtable.'Effect" = '."'$effect' WHERE ".'"'.$dbtable.'Type"='."'$type';";
       }
       if($damageExists != 0){
         $damage =  pg_escape_string($conn, $_POST[$dbtable.'Damage']);
-        $sql .= 'UPDATE "gameTables".'.$dbtable.'s SET "'.$dbtable.'Damage" = '."'$damage' WHERE id='$id';";
+        $sql .= 'UPDATE "gameTables".'.$dbtable.'s SET "'.$dbtable.'Damage" = '."'$damage' WHERE ".'"'.$dbtable.'Type"='."'$type';";
       }
       if($healthExists != 0){
         $health =  pg_escape_string($conn, $_POST[$dbtable.'Health']);
-        $sql .= 'UPDATE "gameTables".'.$dbtable.'s SET "'.$dbtable.'Health" = '."'$health' WHERE id='$id';";
+        $sql .= 'UPDATE "gameTables".'.$dbtable.'s SET "'.$dbtable.'Health" = '."'$health' WHERE ".'"'.$dbtable.'Type"='."'$type';";
       }
       if($speedExists != 0){
         $speed =  pg_escape_string($conn, $_POST['speed']);
-        $sql .= 'UPDATE "gameTables".'.$dbtable.'s SET speed = '."'$speed' WHERE id='$id';";
+        $sql .= 'UPDATE "gameTables".'.$dbtable.'s SET speed = '."'$speed' WHERE ".'"'.$dbtable.'Type"='."'$type';";
       }
       if($pathExists != 0){
         $path =  pg_escape_string($conn, $_POST['path']);
-        $sql .= 'UPDATE "gameTables".'.$dbtable.'s SET path = '."'$path' WHERE id='$id';";
+        $sql .= 'UPDATE "gameTables".'.$dbtable.'s SET path = '."'$path' WHERE ".'"'.$dbtable.'Type"='."'$type';";
       }
       if($valueExists != 0){
         $value =  pg_escape_string($conn, $_POST['value']);
-        $sql .= 'UPDATE "gameTables".'.$dbtable.'s SET value = '."'$value' WHERE id='$id';";
+        $sql .= 'UPDATE "gameTables".'.$dbtable.'s SET value = '."'$value' WHERE ".'"'.$dbtable.'Type"='."'$type';";
       }
       if($enduranceExists != 0){
         $endurance =  pg_escape_string($conn, $_POST['endurance']);
-        $sql .= 'UPDATE "gameTables".'.$dbtable.'s SET endurance = '."'$endurance' WHERE id='$id';";
+        $sql .= 'UPDATE "gameTables".'.$dbtable.'s SET endurance = '."'$endurance' WHERE ".'"'.$dbtable.'Type"='."'$type';";
       }
     } else if($dbtable == 'user'){
       $location = "Location: ../manageProfiles.php";
