@@ -38,8 +38,8 @@
         include './php/connect.php';
         if(isset($_POST['submit'])){
           //Gjøre om POST-data til variabler
-          $usrn = pg_escape_string($conn, $_POST['username']);            
-          $pwd = pg_escape_string($conn, $_POST['passord']);
+          $usrn = trim(pg_escape_string($conn, $_POST['username']), "  ");            
+          $pwd = trim(pg_escape_string($conn, $_POST['passord']), "  ");
         
           $sql = 'SELECT * FROM "webTables"."users" where username='."'$usrn'";
         
