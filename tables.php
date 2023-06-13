@@ -44,6 +44,10 @@
           <input type='text' name='weaponType' style='width: 95px' value='" . $row[2] . "'>
           <label>Damage:</label>
           <input type='number' name='weaponEffect' style='width: 30px' value='" . $row[3]. "'>
+          <label>Path:</label>
+          <input type='number' name='path' style='width: 30px' value='" . $row[4]. "'>
+          <label>Value:</label>
+          <input type='number' name='value' style='width: 30px' value='" . $row[5]. "'>
           <button type='hidden' name='action' value='update'>update</button>
           <button type='submit' name='action' value='remove'>delete</button>
           </form>";
@@ -88,6 +92,10 @@
           <input type='text' name='armorType' style='width: 95px' value='" . $row[2] . "'>
           <label>Defence:</label>
           <input type='number' name='armorEffect' style='width: 30px' value='" . $row[3]. "'>
+          <label>Path:</label>
+          <input type='number' name='path' style='width: 30px' value='" . $row[4]. "'>
+          <label>Value:</label>
+          <input type='number' name='value' style='width: 30px' value='" . $row[5]. "'>
           <button type='hidden' name='action' value='update'>update</button>
           <button type='submit' name='action' value='remove'>delete</button>
           </form>";
@@ -174,6 +182,12 @@
           <input type='number' name='enemyHealth' style='width: 30px' value='" . $row[3]. "'>
           <label>Damage:</label>
           <input type='number' name='enemyDamage' style='width: 30px' value='" . $row[4]. "'>
+          <label>Path:</label>
+          <input type='number' name='path' style='width: 30px' value='" . $row[5]. "'>
+          <label>Speed:</label>
+          <input type='number' name='speed' style='width: 30px' value='" . $row[6]. "'>
+          <label>Endurance:</label>
+          <input type='number' name='endurance' style='width: 30px' value='" . $row[7]. "'>
           <button type='hidden' name='action' value='update'>update</button>
           <button type='submit' name='action' value='remove'>delete</button>
           </form>";
