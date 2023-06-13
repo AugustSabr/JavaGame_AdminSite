@@ -39,7 +39,7 @@
         $speed =  pg_escape_string($conn, $_POST['speed']);
         $sql .= 'UPDATE "gameTables".'.$dbtable.'s SET speed = '."'$speed' WHERE ".'"'.$dbtable.'Type"='."'$type';";
       }
-      if($pathExists != 0){
+      if($pathExists != 0 && !pg_escape_string($conn, $_POST['path']) == ""){
         $path =  pg_escape_string($conn, $_POST['path']);
         $sql .= 'UPDATE "gameTables".'.$dbtable.'s SET path = '."'$path' WHERE ".'"'.$dbtable.'Type"='."'$type';";
       }
@@ -47,7 +47,7 @@
         $value =  pg_escape_string($conn, $_POST['value']);
         $sql .= 'UPDATE "gameTables".'.$dbtable.'s SET value = '."'$value' WHERE ".'"'.$dbtable.'Type"='."'$type';";
       }
-      if($enduranceExists != 0){
+      if($enduranceExists != 0 && !pg_escape_string($conn, $_POST['endurance']) == ""){
         $endurance =  pg_escape_string($conn, $_POST['endurance']);
         $sql .= 'UPDATE "gameTables".'.$dbtable.'s SET endurance = '."'$endurance' WHERE ".'"'.$dbtable.'Type"='."'$type';";
       }
