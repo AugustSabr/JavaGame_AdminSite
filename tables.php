@@ -67,6 +67,10 @@
         <input type="text" name="weaponType" id="weaponType" style='width: 95px'>
         <label>Weapon damage:</label>
         <input type="number" name="weaponEffect" style='width: 30px'>
+        <label>Path:</label>
+        <input type="text" name="path" style='width: 95px'>
+        <label>Value:</label>
+        <input type="number" name="value" style='width: 30px'>
 
         <button type="submit" name="insert">Save</button>
       </form>
@@ -116,7 +120,10 @@
         <input type="text" name="armorType" style='width: 95px'>
         <label>Armor defence:</label>
         <input type="number" name="armorEffect" style='width: 30px'>
-
+        <label>Path:</label>
+        <input type="text" name="path" style='width: 95px'>
+        <label>Value:</label>
+        <input type="number" name="value" style='width: 30px'>
         <button type="submit" name="insert">Save</button>
       </form>
 
@@ -155,7 +162,6 @@
         <input type="text" name="blessingType" style='width: 95px'>
         <label>Blessing effect:</label>
         <input type="number" name="blessingEffect" style='width: 30px'>
-
         <button type="submit" name="insert">Save</button>
       </form>
     </div>
@@ -210,7 +216,12 @@
         <input type="number" name="enemyHealth" style='width: 30px;'>
         <label>Damage:</label>
         <input type="number" name="enemyDamage" style='width: 30px'>
-
+        <label>Path:</label>
+        <input type="text" name="path" style='width: 95px'>
+        <label>Speed:</label>
+        <input type="number" name="speed" style='width: 30px'>
+        <label>Endurance:</label>
+        <input type="number" name="endurance" style='width: 30px'>
         <button type="submit" name="insert">Save</button>
       </form>
     </div>
