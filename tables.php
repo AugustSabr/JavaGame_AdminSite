@@ -51,7 +51,7 @@
           <button type='hidden' name='action' value='update'>update</button>
           <button type='submit' name='action' value='remove'>delete</button>
           </form>";
-          echo "------------------------------------------------------------------------------------";
+          echo "----------------------------------------------------------------------------------------------------------";
         }
       } else {
         echo "0 results";
