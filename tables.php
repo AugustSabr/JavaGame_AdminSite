@@ -27,7 +27,7 @@
     <div>
       <?php
       include 'php/connect.php';
-      $sql = 'SELECT * FROM "gameTables".weapons ORDER BY "id" ASC, "weaponEffect" ASC;';
+      $sql = 'SELECT * FROM "gameTables".weapons ORDER BY "weaponTier" ASC, "weaponEffect" ASC;';
       $result = pg_query($conn, $sql);
 
       if (0 < pg_num_rows($result)) {
@@ -75,7 +75,7 @@
     <div>
       <?php
       include 'php/connect.php';
-      $sql = 'SELECT * FROM "gameTables".armors ORDER BY "id" ASC, "armorEffect" ASC;';
+      $sql = 'SELECT * FROM "gameTables".armors ORDER BY "armorTier" ASC, "armorEffect" ASC;';
       $result = pg_query($conn, $sql);
 
       if (0 < pg_num_rows($result)) {
@@ -163,7 +163,7 @@
     <div>
       <?php
       include 'php/connect.php';
-      $sql = 'SELECT * FROM "gameTables".enemys ORDER BY "id" ASC, "enemyHealth" ASC, "enemyDamage" ASC;';
+      $sql = 'SELECT * FROM "gameTables".enemys ORDER BY "enemyTier" ASC, "enemyHealth" ASC, "enemyDamage" ASC;';
       $result = pg_query($conn, $sql);
 
       if (0 < pg_num_rows($result)) {
