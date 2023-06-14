@@ -109,6 +109,8 @@ textarea {
 #faqAsk label, #faqAsk button{
   margin-top: 15px;
 }
+#faqAsk input {width: 50%;}
+#faqAsk textarea {width: 50%; }
 
 @media (max-width: 500px) {
   #packaging{

@@ -121,11 +121,11 @@ window.onclick = function(event) {
       <form id="faqAsk" method="POST" name="" action="php/insert.php">
         <input type="hidden" name="dbtable" value="faq">
         <label>Navn:</label>
-        <input type='text' name='qName' style='width: 50%' placeholder="denne informasjonen vil bli publisert så ikke del sensetiv informasjon">
+        <input type='text' name='qName' placeholder="denne informasjonen vil bli publisert så ikke del sensetiv informasjon">
         <label>Spørsmål overskrift:</label>
-        <input type='text' name='qTitle' style='width: 50%' placeholder="en overskrift til spørsmålet">
+        <input type='text' name='qTitle' placeholder="en overskrift til spørsmålet">
         <label for='type'>Spørsmål:</label>
-        <textarea name='question' cols='10' rows='5' style='width: 50%'></textarea>
+        <textarea name='question' cols='10' rows='5'></textarea>
         <button type="submit" name="insert" style='width: 100px' onclick="submitAlert()">Submit</button>
       </form>
     </div>
