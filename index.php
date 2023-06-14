@@ -22,14 +22,14 @@
 <!-- The Modal -->
 <div id="myModal" class="modal" style="margin: 0px;">
   <!-- Modal content -->
-  <div class="modal-content">
+  <div id="modal-content">
     <span class="close loginORout">&times;</span>
     <p>Vennligst logg inn:</p>
       <form method="post">
-        <label for="username">Brukernavn:</label>
-        <input type="text" name="username" /><br />
-        <label for="passord">Passord:</label>
-        <input type="password" name="passord" /><br />
+        <label for="username">Brukernavn:</label><br/>
+        <input type="text" name="username"/><br/>
+        <label for="passord">Passord:</label><br/>
+        <input type="password" name="passord"/><br/>
         
         <input type="submit" value="Logg inn" name="submit" />
       </form>

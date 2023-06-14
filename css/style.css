@@ -42,7 +42,7 @@
 }
 
 /* Modal Content */
-.modal-content {
+#modal-content {
   color: black;
   background-color: #fefefe;
   margin: auto;
@@ -106,11 +106,13 @@ textarea {vertical-align: bottom}
   #packaging{width: 85%;}
   #modalButton{font-size: 25px;}
   #faqAsk input {width: 100%;}
-  #faqAsk textarea {width: 100%; }
+  #faqAsk textarea {width: 100%;}
+  #modal-content {width: 60%;}
 }
 
 @media (min-width: 500px) and (max-width: 900px) {
   #packaging{width: 80%;}
   #faqAsk input {width: 100%;}
-  #faqAsk textarea {width: 100%; }
+  #faqAsk textarea {width: 100%;}
+  #modal-content {width: 50%;}
 }
