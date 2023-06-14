@@ -117,14 +117,14 @@ textarea {
   #modalButton{
     font-size: 25px;
   }
-  #faqAsk input {size: 100%;}
-  #faqAsk textarea {size: 100%; }
+  #faqAsk input {width: 100%;}
+  #faqAsk textarea {width: 100%; }
 }
 
 @media (min-width: 500px) and (max-width: 900px) {
   #packaging{
     width: 80%;
   }
-  #faqAsk input {size: 100%;}
-  #faqAsk textarea {size: 100%; }
+  #faqAsk input {width: 100%;}
+  #faqAsk textarea {width: 100%; }
 }
