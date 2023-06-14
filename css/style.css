@@ -109,3 +109,22 @@ textarea {
 #faqAsk label, #faqAsk button{
   margin-top: 15px;
 }
+
+@media (max-width: 500px) {
+  #packaging{
+    width: 85%;
+  }
+  #modalButton{
+    font-size: 25px;
+  }
+  #faqAsk input {size: 100%;}
+  #faqAsk textarea {size: 100%; }
+}
+
+@media (min-width: 500px) and (max-width: 900px) {
+  #packaging{
+    width: 80%;
+  }
+  #faqAsk input {size: 100%;}
+  #faqAsk textarea {size: 100%; }
+}
