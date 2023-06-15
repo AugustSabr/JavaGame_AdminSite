@@ -43,11 +43,11 @@
           <label for='type'>Type:</label>
           <input type='text' name='weaponType' style='width: 85px' value='" . $row[2] . "'>
           <label>Damage:</label>
-          <input type='number' name='weaponEffect' style='width: 25px' value='" . $row[3]. "'>
+          <input type='number' name='weaponEffect' style='width: 20px' value='" . $row[3]. "'>
           <label>Path:</label>
           <input type='text' name='path' style='width: 85px' value='" . $row[4]. "'>
           <label>Value:</label>
-          <input type='number' name='value' style='width: 25px' value='" . $row[5]. "'>
+          <input type='number' name='value' style='width: 20px' value='" . $row[5]. "'>
           <button type='hidden' name='action' value='update'>update</button>
           <button type='submit' name='action' value='remove'>delete</button>
           </form>";
@@ -66,11 +66,11 @@
         <label for="type">Weapon type:</label>
         <input type="text" name="weaponType" id="weaponType" style='width: 85px'>
         <label>Weapon damage:</label>
-        <input type="number" name="weaponEffect" style='width: 25px'>
+        <input type="number" name="weaponEffect" style='width: 20px'>
         <label>Path:</label>
         <input type="text" name="path" style='width: 85px'>
         <label>Value:</label>
-        <input type="number" name="value" style='width: 25px'>
+        <input type="number" name="value" style='width: 20px'>
 
         <button type="submit" name="insert">Save</button>
       </form>
@@ -95,11 +95,11 @@
           <label for='type'>Type:</label>
           <input type='text' name='armorType' style='width: 85px' value='" . $row[2] . "'>
           <label>Defence:</label>
-          <input type='number' name='armorEffect' style='width: 25px' value='" . $row[3]. "'>
+          <input type='number' name='armorEffect' style='width: 20px' value='" . $row[3]. "'>
           <label>Path:</label>
           <input type='text' name='path' style='width: 85px' value='" . $row[4]. "'>
           <label>Value:</label>
-          <input type='number' name='value' style='width: 25px' value='" . $row[5]. "'>
+          <input type='number' name='value' style='width: 20px' value='" . $row[5]. "'>
           <button type='hidden' name='action' value='update'>update</button>
           <button type='submit' name='action' value='remove'>delete</button>
           </form>";
@@ -119,11 +119,11 @@
         <label for="type" >Armor type:</label>
         <input type="text" name="armorType" style='width: 85px'>
         <label>Armor defence:</label>
-        <input type="number" name="armorEffect" style='width: 25px'>
+        <input type="number" name="armorEffect" style='width: 20px'>
         <label>Path:</label>
         <input type="text" name="path" style='width: 85px'>
         <label>Value:</label>
-        <input type="number" name="value" style='width: 25px'>
+        <input type="number" name="value" style='width: 20px'>
         <button type="submit" name="insert">Save</button>
       </form>
 
@@ -143,7 +143,7 @@
           <label for='type'>Type:</label>
           <input type='text' name='blessingType' style='width: 85px' value='" . $row[1] . "'>
           <label>Effect:</label>
-          <input type='number' name='blessingEffect' style='width: 25px' value='" . $row[2]. "'>
+          <input type='number' name='blessingEffect' style='width: 20px' value='" . $row[2]. "'>
           <button type='hidden' name='action' value='update'>update</button>
           <button type='submit' name='action' value='remove'>delete</button>
           </form>";
@@ -161,7 +161,7 @@
         <label for="type">Blessing type:</label>
         <input type="text" name="blessingType" style='width: 85px'>
         <label>Blessing effect:</label>
-        <input type="number" name="blessingEffect" style='width: 25px'>
+        <input type="number" name="blessingEffect" style='width: 20px'>
         <button type="submit" name="insert">Save</button>
       </form>
     </div>
@@ -185,15 +185,15 @@
           <label for='type'>Type:</label>
           <input type='text' name='enemyType' style='width: 85px' value='" . $row[2] . "'>
           <label>Health:</label>
-          <input type='number' name='enemyHealth' style='width: 25px' value='" . $row[3]. "'>
+          <input type='number' name='enemyHealth' style='width: 20px' value='" . $row[3]. "'>
           <label>Damage:</label>
-          <input type='number' name='enemyDamage' style='width: 25px' value='" . $row[4]. "'>
+          <input type='number' name='enemyDamage' style='width: 20px' value='" . $row[4]. "'>
           <label>Path:</label>
           <input type='text' name='path' style='width: 85px' value='" . $row[5]. "'>
           <label>Speed:</label>
-          <input type='number' name='speed' style='width: 25px' value='" . $row[6]. "'>
+          <input type='number' name='speed' style='width: 20px' value='" . $row[6]. "'>
           <label>Endurance:</label>
-          <input type='number' name='endurance' style='width: 25px' value='" . $row[7]. "'>
+          <input type='number' name='endurance' style='width: 20px' value='" . $row[7]. "'>
           <button type='hidden' name='action' value='update'>update</button>
           <button type='submit' name='action' value='remove'>delete</button>
           </form>";
@@ -213,15 +213,15 @@
         <label for="type">Enemy type:</label>
         <input type="text" name="enemyType" style='width: 85px'>
         <label>Health:</label>
-        <input type="number" name="enemyHealth" style='width: 25px;'>
+        <input type="number" name="enemyHealth" style='width: 20px;'>
         <label>Damage:</label>
-        <input type="number" name="enemyDamage" style='width: 25px'>
+        <input type="number" name="enemyDamage" style='width: 20px'>
         <label>Path:</label>
         <input type="text" name="path" style='width: 85px'>
         <label>Speed:</label>
-        <input type="number" name="speed" style='width: 25px'>
+        <input type="number" name="speed" style='width: 20px'>
         <label>Endurance:</label>
-        <input type="number" name="endurance" style='width: 25px'>
+        <input type="number" name="endurance" style='width: 20px'>
         <button type="submit" name="insert">Save</button>
       </form>
     </div>
