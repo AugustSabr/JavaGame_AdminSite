@@ -89,11 +89,16 @@ window.onclick = function(event) {
 
 <div id="packaging">
   <h1>Velkommen til GAME sin hjemmeside</h1>
+  <div>
+    <p>Dette er en netside for spillet GAME. Under er en kort instruksvideo om hvordan du kan laste ned spillet</p>
   <video controls style='width: 100%'>
     <source src="./video/lastned.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+  </div>
+
   <div id="faqDiv">
+    <p>Her er det kanskje svar på noen spørsmål du har. om du lurer på noe du ikke finner under kan du gjerne stille dit eget spørsmål. Husk å ikke skriv sensetiv informasjon, og bemerk at urelevante eller støtende spørmsål blir ikke besvart</p>
     <h2 id="h1">Ofte stilte spørsmål (FAQ)</h2>
     <?php
       include 'php/connect.php';
