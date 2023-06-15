@@ -89,7 +89,7 @@ window.onclick = function(event) {
 
 <div id="packaging">
   <h1>Velkommen til GAME sin hjemmeside</h1>
-  <video controls>
+  <video controls style='width: 100%'>
     <source src="./video/lastned.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
