@@ -26,9 +26,9 @@
     <span class="close loginORout">&times;</span>
     <h3 style="font-weight: bold;">Vennligst logg inn:</h3>
       <form method="post">
-        <label for="username">Brukernavn:</label><br/>
+        <label>Brukernavn:</label><br/>
         <input type="text" name="username"/><br/>
-        <label for="password">Passord:</label><br/>
+        <label>Passord:</label><br/>
         <input type="password" name="password"/><br/>
         
         <input type="submit" value="Logg inn" name="submit" />
