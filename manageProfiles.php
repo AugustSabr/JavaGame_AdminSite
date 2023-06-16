@@ -33,11 +33,11 @@
         echo "
         <form method='POST' name='' action='php/update.php'>
         <input type='hidden' name='dbtable' value='user'>
-        <label for='type'>Id: " . $row[0]. "</label>
+        <label>Id: " . $row[0]. "</label>
         <input type='hidden' name='id' value=" . $row[0]. ">
-        <label for='type'>Username:</label>
+        <label>Username:</label>
         <input type='text' name='username' style='width: 120px' value='" . $row[1] . "'>
-        <label for='type'>New Password:</label>
+        <label>New Password:</label>
         <input type='text' name='password' style='width: 120px' value=''>
         <label>Privileges:</label>
         <input type='text' name='privileges' style='width: 45px' value='" . $row[3]. "'>
@@ -57,7 +57,7 @@
     <input type="hidden" name="dbtable" value="user">
     <label>Username:</label>
     <input type="text" name="username" style='width: 120px;'>
-    <label for="type">Password:</label>
+    <label>Password:</label>
     <input type="text" name="password" id="password" style='width: 120px'>
     <label>Privileges:</label>
     <input type="text" name="privileges" style='width: 45px'>

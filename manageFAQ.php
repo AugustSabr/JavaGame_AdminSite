@@ -36,13 +36,13 @@
             echo "
             <form method='POST' name='' action='php/update.php'>
             <input type='hidden' name='dbtable' value='faq'>
-            <label for='type'>Id: " . $row[0]. "</label>
+            <label>Id: " . $row[0]. "</label>
             <input type='hidden' name='id' value=" . $row[0]. ">
-            <label for='type'>Question Name:</label>
+            <label>Question Name:</label>
             <input type='text' name='qName' style='width: 100px' value='" . $row[1] . "'>
-            <label for='type'>Question Title:</label>
+            <label>Question Title:</label>
             <input type='text' name='qTitle' style='width: 100px' value='" . $row[2] . "'>
-            <label for='type'>Question:</label>
+            <label>Question:</label>
             <textarea name='question' cols='30' rows='1'>" . $row[3] . "</textarea>
             <label>answer Name</label>
             <input type='text' name='aName' style='width: 100px' value='" . $row[4]. "'>
@@ -69,13 +69,13 @@
             echo "
             <form method='POST' name='' action='php/update.php'>
             <input type='hidden' name='dbtable' value='faq'>
-            <label for='type'>Id: " . $row[0]. "</label>
+            <label>Id: " . $row[0]. "</label>
             <input type='hidden' name='id' value=" . $row[0]. ">
-            <label for='type'>Question Name:</label>
+            <label>Question Name:</label>
             <input type='text' name='qName' style='width: 100px' value='" . $row[1] . "'>
-            <label for='type'>Question Title:</label>
+            <label>Question Title:</label>
             <input type='text' name='qTitle' style='width: 100px' value='" . $row[2] . "'>
-            <label for='type'>Question:</label>
+            <label>Question:</label>
             <textarea name='question' cols='30' rows='1'>" . $row[3] . "</textarea>
             <label>answer Name</label>
             <input type='text' name='aName' style='width: 100px' value='" . $row[4]. "'>

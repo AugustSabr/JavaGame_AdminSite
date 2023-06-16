@@ -133,7 +133,7 @@ window.onclick = function(event) {
         <input type='text' name='qName' placeholder="denne informasjonen vil bli publisert så ikke del sensetiv informasjon">
         <label>Spørsmål overskrift:</label>
         <input type='text' name='qTitle' placeholder="en overskrift til spørsmålet">
-        <label for='type'>Spørsmål:</label>
+        <label>Spørsmål:</label>
         <textarea name='question' cols='10' rows='5'></textarea>
         <button type="submit" name="insert" style='width: 100px' onclick="submitAlert()">Submit</button>
       </form>
