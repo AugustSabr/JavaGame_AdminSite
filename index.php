@@ -28,8 +28,8 @@
       <form method="post">
         <label for="username">Brukernavn:</label><br/>
         <input type="text" name="username"/><br/>
-        <label for="passord">Passord:</label><br/>
-        <input type="password" name="passord"/><br/>
+        <label for="password">Passord:</label><br/>
+        <input type="password" name="password"/><br/>
         
         <input type="submit" value="Logg inn" name="submit" />
       </form>
